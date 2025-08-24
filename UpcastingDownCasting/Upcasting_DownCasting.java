@@ -1,12 +1,12 @@
 // Parent class
-class A {
+class AB {
     public void show1() {
         System.out.println("in A show");
     }
 }
 
 // Child class B extends A
-class B extends A {
+class BC extends AB {
     public void show2() {
         System.out.println("in show B");
     }
@@ -56,14 +56,14 @@ public class Upcasting_DownCasting {
         // =========================
         // UPCASTING
         // =========================
-        A obj = new B();   // Parent ref → Child object (safe, implicit casting)
+        AB obj = new BC();   // Parent ref → Child object (safe, implicit casting)
         obj.show1();       // Allowed (method from A)
         // obj.show2();    // ❌ Not allowed (compiler sees obj as type A)
 
         // =========================
         // DOWNCASTING
         // =========================
-        B obj1 = (B) obj;  // Explicit casting (Parent ref → Child ref)
+        BC obj1 = (BC) obj;  // Explicit casting (Parent ref → Child ref)
         obj1.show2();      // Now we can access child method
         obj1.show1();      // Also still can access parent method
     }
